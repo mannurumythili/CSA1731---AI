@@ -1,0 +1,22 @@
+% Facts representing birds and their ability to fly
+bird(crow).
+bird(sparrow).
+bird(ostrich).
+
+can_fly(crow).
+can_fly(sparrow).
+
+% Rules to determine if a bird can fly
+flies(X) :-
+    bird(X),
+    can_fly(X).
+
+% Queries to check if a bird can fly
+% Example queries:
+% Query: Can a crow fly?
+% Query: flies(crow).
+% Response: true.
+
+% Query: Can an ostrich fly?
+% Query: flies(ostrich).
+% Response: false.
