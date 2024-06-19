@@ -1,0 +1,27 @@
+% Facts representing relationships between students, teachers, subjects, and course codes
+teaches_subject(teacher1, math, m101).
+teaches_subject(teacher2, physics, p201).
+teaches_subject(teacher3, english, e301).
+teaches_subject(teacher4, history, h401).
+
+student_subject(student1, math, m101).
+student_subject(student1, physics, p201).
+student_subject(student1, english, e301).
+student_subject(student2, math, m101).
+student_subject(student2, physics, p201).
+student_subject(student3, english, e301).
+student_subject(student4, history, h401).
+
+% Rules for querying information
+teaches_teacher(Teacher, Subject, Code) :-
+    teaches_subject(Teacher, Subject, Code).
+
+student_subjects(Student, Subject, Code) :-
+    student_subject(Student, Subject, Code).
+
+% Example queries
+% Query: Who teaches math and what is the course code?
+% Query: teaches_teacher(Teacher, math, Code).
+
+% Query: Which subjects does student1 study and what are their course codes?
+% Query: student_subjects(student1, Subject, Code).
