@@ -1,0 +1,15 @@
+person('Alice', date(1990, 5, 21)).
+person('Bob', date(1985, 7, 13)).
+person('Charlie', date(1992, 12, 1)).
+person('Diana', date(1988, 2, 17)).
+person('Edward', date(1995, 3, 30)).
+
+date_of_birth(Name, DateOfBirth) :-
+    person(Name, DateOfBirth).
+
+born_in_year(Year, Name) :-
+    person(Name, date(Year, _, _)).
+
+born_before(Year, Name) :-
+    person(Name, date(Y, _, _)),
+    Y < Year.
